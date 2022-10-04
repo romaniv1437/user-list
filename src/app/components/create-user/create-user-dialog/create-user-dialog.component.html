@@ -1,0 +1,21 @@
+<p mat-dialog-title>Create new User</p>
+<div class="wrapper-div">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Enter First Name</mat-label>
+      <input matInput type="text" (change)="onTyping($event, 'firstName')">
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Enter Last Name</mat-label>
+      <input matInput type="text" (change)="onTyping($event, 'lastName')">
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Enter E-mail</mat-label>
+      <input matInput type="text" (change)="onTyping($event, 'email')">
+    </mat-form-field>
+    <mat-error *ngIf="data.email.hasError('email')">
+      Please enter a valid email address
+    </mat-error>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button color="primary" (click)="onNoClick()" [mat-dialog-close]="data.firstName.value">Create user</button>
+</div>
