@@ -1,0 +1,14 @@
+<div class="wrapper-div">
+  <mat-form-field appearance="fill" [formGroup]="searchForm">
+    <input matInput type="text" placeholder="Search" formControlName="search">
+    <button matSuffix mat-icon-button>
+      <mat-icon>search</mat-icon>
+    </button>
+  </mat-form-field>
+
+  <mat-card style="margin-bottom: 15px;" *ngFor="let user of searchedUsers">
+    <mat-card-title (click)="navigateToUserPage(user.id)">{{user.firstName}}</mat-card-title>
+    <mat-card-subtitle>{{user.email}}</mat-card-subtitle>
+  </mat-card>
+
+</div>
