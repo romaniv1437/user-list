@@ -1,17 +1,25 @@
 <p>
   <mat-toolbar color="primary">
-    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with menu icon">
+    <button mat-icon-button [matMenuTriggerFor]="menu">
       <mat-icon>menu</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
-      <button mat-menu-item (click)="toCreateUserPage()">
-        <mat-icon>add</mat-icon>
-        <span>Create user</span>
-      </button>
-      <button mat-menu-item (click)="toFindUserPage()">
-        <mat-icon>recent_actors</mat-icon>
-        <span>Find users</span>
-      </button>
+      <span mat-menu-item>
+        <app-button-with-navigate [buttonData]="{
+        link: 'users',
+        icon: 'add',
+        title: 'Create user'
+      }"
+        ></app-button-with-navigate>
+      </span>
+      <span mat-menu-item>
+        <app-button-with-navigate [buttonData]="{
+        link: 'find',
+        icon: 'recent_actors',
+        title: 'Find users'
+      }"
+        ></app-button-with-navigate>
+      </span>
     </mat-menu>
     <span>User list</span>
     <span style="flex: 1 1 auto;"></span>

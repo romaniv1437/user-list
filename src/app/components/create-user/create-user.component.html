@@ -5,7 +5,11 @@
     <mat-divider inset></mat-divider>
     <mat-card-actions align="end">
       <button mat-raised-button color="primary" (click)="openDialog('100ms', '100ms')">Open dialog</button>
-      <button mat-raised-button color="primary" (click)="navigateToFindPage()">Find Users</button>
+      <app-button-with-navigate [buttonData]="{
+        link: 'find',
+        icon: 'recent_actors',
+        title: 'Find Users'
+      }"></app-button-with-navigate>
     </mat-card-actions>
   </mat-card>
 </div>

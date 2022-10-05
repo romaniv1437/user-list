@@ -3,47 +3,31 @@ import { BrowserModule } from '@angular/platform-browser';
 import { DevToolsExtension, NgRedux, NgReduxModule } from '@angular-redux/store';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CreateUserComponent } from './components/create-user/create-user.component';
 import { initialState, InitialState, userReducer } from "../redux/reducers/userReducer";
-import { ReactiveFormsModule } from "@angular/forms";
-import { FindUsersComponent } from './components/find-users/find-users.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CreateUserDialogComponent } from './components/create-user/create-user-dialog/create-user-dialog.component';
-import { MatDialogModule } from "@angular/material/dialog";
-import { MatInputModule } from "@angular/material/input";
-import { MatFormFieldModule } from "@angular/material/form-field";
-import { MatCardModule } from "@angular/material/card";
 import { MatButtonModule } from "@angular/material/button";
-import { MatDividerModule } from "@angular/material/divider";
 import { MatIconModule } from "@angular/material/icon";
-import { UserPageComponent } from './components/user-page/user-page.component';
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatMenuModule } from "@angular/material/menu";
 import { loadState } from "../redux/persist/persist-state";
+import { SharedModule } from "./shared/shared.module";
+import { UsersModule } from "./components/users.module";
 
 @NgModule({
   declarations: [
     AppComponent,
-    CreateUserComponent,
-    FindUsersComponent,
-    CreateUserDialogComponent,
-    UserPageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgReduxModule,
-    ReactiveFormsModule,
     BrowserAnimationsModule,
-    MatDialogModule,
-    MatInputModule,
-    MatFormFieldModule,
-    MatCardModule,
-    MatButtonModule,
-    MatDividerModule,
+    SharedModule,
+    UsersModule,
     MatIconModule,
+    MatButtonModule,
     MatToolbarModule,
-    MatMenuModule
+    MatMenuModule,
   ],
   providers: [],
   bootstrap: [ AppComponent ]
